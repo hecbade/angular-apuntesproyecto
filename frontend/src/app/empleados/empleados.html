@@ -1,69 +1,57 @@
 <div class="container">
   <div class="row">
     <div class="col s5">
-      <div class="card">
-        <div class="card-content">
-          <form #empleadoForm="ngForm">
+      <div class="card_content">
+        <form #empleadoForm="ngForm" (ngSubmit)="addEmployee()">
 
-            <input
-              type="hidden"
-              name="_id"
-              #_id="ngModel"
-              [(ngModel)]="empleadosServices.empleadoSeleccionado.id"
-            />
-
-            <div class="row">
-
-              <div class="input-field col s12">
-                <input
-                  type="text"
-                  name="nombre"
-                  placeholder="Introduzca su nombre.."
-                  #nombre="ngModel"
-                  [(ngModel)]="empleadosServices.empleadoSeleccionado.nombre"
-                />
-              </div>
-
-              <div class="input-field col s12">
-                <input
-                  type="text"
-                  name="cargo"
-                  placeholder="Introduzca su cargo.."
-                  #cargo="ngModel"
-                  [(ngModel)]="empleadosServices.empleadoSeleccionado.cargo"
-                />
-              </div>
-
-              <div class="input-field col s12">
-                <input
-                  type="text"
-                  name="departamento"
-                  placeholder="Introduzca su departamento.."
-                  #departamento="ngModel"
-                  [(ngModel)]="empleadosServices.empleadoSeleccionado.departamento"
-                />
-              </div>
-
-              <div class="input-field col s12">
-                <input
-                  type="text"
-                  name="salario"
-                  placeholder="Introduzca su salario.."
-                  #salario="ngModel"
-                  [(ngModel)]="empleadosServices.empleadoSeleccionado.salario"
-                />
-              </div>
-              <div class="card_action">
-                <div class="btn right" (click)="resetForm()">Reset</div>
-                <div class="btn right" (click)="addEmployee()">Añadir empleado</div>
-              </div>
-
+          <div class="row">
+            <div class="input-filed col s12">
+              <input type="hidden" name="id" #nombre="ngModel" [(ngModel)]="empleadosServices.empleadoSeleccionado.id"
+                placeholder="Introduzca su id">
             </div>
-          </form>
-        </div>
+            <div class="input-filed col s12">
+               <label for="nombre">NOMBRE: </label>
+              <input type="text" name="nombre" #nombre="ngModel"
+                [(ngModel)]="empleadosServices.empleadoSeleccionado.nombre" placeholder="Introduzca su nombre">
+            </div>
+            <div class="input-filed col s12">
+               <label for="cargo">CARGO: </label>
+              <input type="text" name="cargo" #nombre="ngModel"
+                [(ngModel)]="empleadosServices.empleadoSeleccionado.cargo" placeholder="Introduzca su cargo">
+            </div>
+            <div class="input-filed col s12">
+               <label for="departamento">DEPARTAMENTO: </label>
+              <input type="text" name="departamento" #nombre="ngModel"
+                [(ngModel)]="empleadosServices.empleadoSeleccionado.departamento"
+                placeholder="Introduzca su departamento">
+            </div>
+            <div class="input-filed col s12">
+               <label for="Salario">Salario: </label>
+              <input type="number" name="Salario" #nombre="ngModel"
+                [(ngModel)]="empleadosServices.empleadoSeleccionado.salario" placeholder="Introduzca su salario">
+            </div>
+            <div class="card-action">
+              <div class="input-filed col S12" >
+                <button class="btn right" (click)="resetForm()">RESET</button>
+              </div>
+                <div class="input-filed col S12" >
+                <button class="btn right" (click)="addEmployee()">Añadir</button>
+              </div>
+            </div>
+          </div>
+        </form>
       </div>
     </div>
-
-    <div class="col s7"></div>
+    <div class="col s7">
+      <table>
+        <thead>
+          <th>NOMBRE</th>
+          <th>CARGO</th>
+          <th>DEPARTAMENTO</th>
+          <th>SALARIO</th>
+           <th>ACCIONES</th>
+        </thead>
+      </table>
+    </div>
   </div>
 </div>

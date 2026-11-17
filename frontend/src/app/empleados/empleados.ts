@@ -16,7 +16,6 @@ export class Empleados {
     public empleadosServices: empleadosServices
   ){}
 
-  addEmployee(){
-  }
+  addEmployee(){}
   resetForm(){}
 }
