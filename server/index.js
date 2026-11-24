@@ -1,4 +1,5 @@
 const express = require('express');
+const cors = require("cors");
 const app = express();
 
 const morgan = require('morgan');
@@ -16,12 +17,17 @@ app.listen(app.get('port') , () => {
 
 
 // MIDDLEWARES
+app.use(cors({ origin: "http://localhost:4200"}));
 
 app.use(morgan('dev'));
 
 app.use(express.json());
 
 app.use('/api/empleados', require('./routes/empleados.routes.js'));
+
+
+
+
 
 // ROUTES
 

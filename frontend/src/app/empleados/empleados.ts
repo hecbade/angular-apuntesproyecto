@@ -16,6 +16,18 @@ export class Empleados {
     public empleadosServices: empleadosServices
   ){}
 
-  addEmployee(){}
-  resetForm(){}
+  addEmployee(form: NgForm){
+    console.log(form.value)
+
+    this.empleadosServices.crearEmpleado(form.value).subscribe(res => {
+      console.log(res);
+    });
+  }
+  resetForm(form:NgForm){
+    if (form){
+      form.reset()
+      this.empleadosServices.empleadoSeleccionado = new Empleado();
+    }
+
+  }
 }

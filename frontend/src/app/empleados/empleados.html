@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col s5">
       <div class="card_content">
-        <form #empleadoForm="ngForm" (ngSubmit)="addEmployee()">
+        <form #empleadoForm="ngForm">
 
           <div class="row">
             <div class="input-filed col s12">
@@ -27,15 +27,15 @@
             </div>
             <div class="input-filed col s12">
                <label for="Salario">Salario: </label>
-              <input type="number" name="Salario" #nombre="ngModel"
+              <input type="number" name="salario" #nombre="ngModel"
                 [(ngModel)]="empleadosServices.empleadoSeleccionado.salario" placeholder="Introduzca su salario">
             </div>
             <div class="card-action">
               <div class="input-filed col S12" >
-                <button class="btn right" (click)="resetForm()">RESET</button>
+                <button class="btn right" (click)="resetForm(empleadoForm)">RESET</button>
               </div>
                 <div class="input-filed col S12" >
-                <button class="btn right" (click)="addEmployee()">Añadir</button>
+                <button class="btn right" (click)="addEmployee(empleadoForm)">Añadir</button>
               </div>
             </div>
           </div>
